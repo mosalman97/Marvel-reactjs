@@ -2,21 +2,22 @@ import React from 'react'
 import styled from 'styled-components'
 import Logo from "../Assets/Logo/logo.png"
 import Moon from "../Assets/Logo/moon.png"
+import { Link } from 'react-router-dom';
 
 
 export default function Header() {
     return (
      <Headcontainer>
-             <Logoitems href="/">
+             <Logoitems to="/">
                <Logoimage src={Logo} alt="Logoimage" />
                <Logotext>marvel</Logotext>
              </Logoitems>  
          <Navbar>
              <Navitems>
-                 <Navitem><Navlink href="/">about</Navlink></Navitem>
-                 <Navitem><Navlink href="/">projects</Navlink></Navitem>
-                 <Navitem><Navlink href="/">resume</Navlink></Navitem>
-                 <Navitem><Navlink href="/">contact</Navlink></Navitem>
+                 <Navitem><Navlink to="/about">about</Navlink></Navitem>
+                 <Navitem><Navlink to="/projects">projects</Navlink></Navitem>
+                 <Navitem><Navlink to="/resume">resume</Navlink></Navitem>
+                 <Navitem><Navlink to="/contact">contact</Navlink></Navitem>
              </Navitems>
          </Navbar>
          <Colormode href="/">
@@ -32,7 +33,7 @@ const Headcontainer = styled.div`
     align-items:center;
     padding-top:20px;
 `;
-const Logoitems = styled.a`
+const Logoitems = styled(Link)`
      text-decoration:none;
      display:flex;
      align-items:baseline;
@@ -58,7 +59,7 @@ const Navitems = styled.ul`
 const Navitem = styled.li`
      margin-right:20px;
 `;
-const Navlink = styled.a`
+const Navlink = styled(Link)`
      text-decoration:none;
      text-transform:capitalize;  
      font-weight:bold;
